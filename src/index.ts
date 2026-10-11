@@ -1,6 +1,7 @@
 import express from "express";
 import type { Express, Request, Response } from "express";
 import cors from "cors";
+import { resolve } from "node:path";
 
 import type { Pet, PetQuery, PetQueryKey } from "./data/pets";
 import { getAllPets, getPetById } from "./db";
@@ -9,8 +10,7 @@ const PORT = 8000;
 const app: Express = express();
 
 app.use(cors());
-
-console.log(`TypeScript version:Soyeb Ahmed 6.0.3`);
+app.use(express.static(resolve(__dirname, "../public"), { index: false }));
 
 //special offers
 
@@ -21,14 +21,16 @@ app.get("/special-offers", (req: Request, res: Response): void => {
       title: "Free Pet Grooming",
       description:
         "Get a free grooming session for your pet when you adopt from our shelter.",
-      imageUrl: "https://example.com/images/free-grooming.jpg",
+      imageUrl:
+        "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=85",
     },
     {
       id: 2,
       title: "Discounted Pet Supplies",
       description:
         "Get exclusive discounts on all pet supplies when you adopt from our shelter.",
-      imageUrl: "https://example.com/images/discounted-supplies.jpg",
+      imageUrl:
+        "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=800&q=85",
     },
   ];
 
@@ -80,6 +82,13 @@ const getPetValue = (pet: Pet, key: PetQueryKey): unknown => {
 app.get(
   "/",
   (req: Request<{}, {}, {}, PetQuery>, res: Response<Pet[]>): void => {
+    res.vary("Accept");
+
+    if (req.get("accept")?.includes("text/html")) {
+      res.sendFile(resolve(__dirname, "../public/index.html"));
+      return;
+    }
+
     const searchTag = req.query;
     const queryKeys = Object.keys(searchTag) as PetQueryKey[];
     const search = getAllPets().filter((pet: Pet): boolean =>

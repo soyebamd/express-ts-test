@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Meet the lovely pets waiting for a home at Goodside Animal Rescue."
+    />
+    <meta name="theme-color" content="#f7f6f2" />
+    <title>Find your new best friend — Goodside</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Goodside home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none">
+            <path
+              d="M20 34.1 6.4 21.3a8.1 8.1 0 0 1 11.5-11.4L20 12l2.1-2.1a8.1 8.1 0 0 1 11.5 11.4L20 34.1Z"
+              fill="currentColor"
+            />
+            <circle cx="13.1" cy="17.2" r="1.55" fill="#fff" />
+            <circle cx="19.8" cy="15.2" r="1.55" fill="#fff" />
+            <circle cx="26.5" cy="17.2" r="1.55" fill="#fff" />
+            <path d="M16 21.2a4 4 0 0 0 8 0l-4-2.5-4 2.5Z" fill="#fff" />
+          </svg>
+        </span>
+        <span>goodside<span class="brand-period">.</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link nav-link-active" href="#pets">Find a pet</a>
+        <a class="nav-link" href="#offers">Our promise</a>
+      </nav>
+      <a class="header-cta" href="#pets">
+        Start your search
+        <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> GOOD THINGS START HERE</div>
+          <h1 id="hero-title">Your new best friend is <span>closer than you think.</span></h1>
+          <p>
+            A little more love, a lot more tail wags. Meet the lovely faces
+            looking for a place to call home.
+          </p>
+          <a class="hero-cta" href="#pets">
+            Meet your match
+            <span class="arrow-circle" aria-hidden="true">↓</span>
+          </a>
+          <div class="hero-proof">
+            <div class="avatar-stack" aria-hidden="true">
+              <img
+                src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=96&h=96&q=80"
+                alt=""
+              />
+              <img
+                src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=96&h=96&q=80"
+                alt=""
+              />
+              <img
+                src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=96&h=96&q=80"
+                alt=""
+              />
+            </div>
+            <span><strong>15 lovely souls</strong><br />are waiting to meet you</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image-wrap">
+            <img
+              class="hero-image"
+              src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&h=1100&q=90"
+              alt="A happy golden retriever enjoying a sunny day"
+            />
+          </div>
+          <div class="hero-note">
+            <span class="note-icon" aria-hidden="true">✳</span>
+            <span>Room in your heart?<br /><strong>They have room in theirs.</strong></span>
+          </div>
+          <span class="hero-sparkle hero-sparkle-one" aria-hidden="true">✳</span>
+          <span class="hero-sparkle hero-sparkle-two" aria-hidden="true">✦</span>
+        </div>
+      </section>
+
+      <section class="shelter-strip" aria-label="Goodside adoption facts">
+        <div class="strip-intro">
+          <span class="strip-icon" aria-hidden="true">✳</span>
+          <span>Little lives, big love.</span>
+        </div>
+        <div class="strip-stat"><strong id="total-count">—</strong><span>pets to meet</span></div>
+        <div class="strip-stat"><strong id="available-count">—</strong><span>looking for a home</span></div>
+        <div class="strip-stat"><strong id="species-count">3</strong><span>kinds of best friend</span></div>
+        <span class="strip-heart" aria-hidden="true">♡</span>
+      </section>
+
+      <section class="pets-section" id="pets" aria-labelledby="pets-title">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow section-eyebrow">THE GOODSIDE CREW</div>
+            <h2 id="pets-title">Meet the <span>cuties.</span></h2>
+            <p class="section-subtitle">The right one has a way of finding you.</p>
+          </div>
+          <label class="search-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10.8" cy="10.8" r="6.8"></circle>
+              <path d="m16 16 4.2 4.2"></path>
+            </svg>
+            <input
+              id="pet-search"
+              type="search"
+              placeholder="Search by name or breed"
+              aria-label="Search by name or breed"
+            />
+            <kbd>/</kbd>
+          </label>
+        </div>
+
+        <div class="catalog-toolbar">
+          <div class="filter-chips" role="group" aria-label="Filter pets by species">
+            <button class="filter-chip is-active" type="button" data-species="all" aria-pressed="true">Everyone <span id="everyone-count"></span></button>
+            <button class="filter-chip" type="button" data-species="Dog" aria-pressed="false">🐕 Dogs</button>
+            <button class="filter-chip" type="button" data-species="Cat" aria-pressed="false">🐈 Cats</button>
+            <button class="filter-chip" type="button" data-species="Rabbit" aria-pressed="false">🐇 Bunnies</button>
+          </div>
+          <label class="availability-select">
+            <span class="availability-dot" aria-hidden="true"></span>
+            <select id="availability" aria-label="Filter by adoption status">
+              <option value="all">All pets</option>
+              <option value="available">Ready for a home</option>
+              <option value="adopted">Already adopted</option>
+            </select>
+            <span class="select-chevron" aria-hidden="true">⌄</span>
+          </label>
+        </div>
+
+        <div class="results-meta">
+          <span id="results-label" aria-live="polite">Finding your new best friend…</span>
+          <span class="results-hint">A forever friend is just one hello away <span aria-hidden="true">↗</span></span>
+        </div>
+
+        <div id="pet-grid" class="pet-grid" aria-live="polite" aria-busy="true"></div>
+        <div id="empty-state" class="empty-state" hidden>
+          <span aria-hidden="true">☀</span>
+          <h3>No matches just yet</h3>
+          <p>Try another search or switch up your filters.</p>
+          <button id="clear-filters" class="text-button" type="button">Clear all filters <span aria-hidden="true">↗</span></button>
+        </div>
+        <div id="error-state" class="error-state" role="alert" hidden>
+          <strong>We couldn't load the Goodside crew.</strong>
+          <span>Please check your connection and try again.</span>
+          <button id="retry-load" class="text-button" type="button">Try again <span aria-hidden="true">↻</span></button>
+        </div>
+      </section>
+
+      <section class="promise-section" id="offers" aria-labelledby="promise-title">
+        <div class="promise-heading">
+          <div>
+            <div class="eyebrow section-eyebrow">A LITTLE EXTRA LOVE</div>
+            <h2 id="promise-title">Good things come <span>with goodside.</span></h2>
+          </div>
+          <p>Adoption is just the beginning. We’ll make sure you both feel right at home.</p>
+        </div>
+        <div id="offer-grid" class="offer-grid" aria-live="polite" aria-busy="true">
+          <div class="offer-skeleton"></div>
+          <div class="offer-skeleton"></div>
+        </div>
+        <p class="photo-credit">
+          Animal photography via <a href="https://unsplash.com/license" target="_blank" rel="noreferrer">Unsplash</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="/">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none">
+            <path d="M20 34.1 6.4 21.3a8.1 8.1 0 0 1 11.5-11.4L20 12l2.1-2.1a8.1 8.1 0 0 1 11.5 11.4L20 34.1Z" fill="currentColor" />
+            <circle cx="13.1" cy="17.2" r="1.55" fill="#fff" />
+            <circle cx="19.8" cy="15.2" r="1.55" fill="#fff" />
+            <circle cx="26.5" cy="17.2" r="1.55" fill="#fff" />
+            <path d="M16 21.2a4 4 0 0 0 8 0l-4-2.5-4 2.5Z" fill="#fff" />
+          </svg>
+        </span>
+        <span>goodside<span class="brand-period">.</span></span>
+      </a>
+      <span>Made for the love of a good friend.</span>
+      <a href="#pets">Back to the good stuff ↑</a>
+    </footer>
+
+    <dialog id="pet-dialog" class="pet-dialog" aria-labelledby="dialog-name">
+      <button class="dialog-close" type="button" aria-label="Close pet details">×</button>
+      <div id="dialog-content"></div>
+    </dialog>
+  </body>
+</html>
