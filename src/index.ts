@@ -10,6 +10,8 @@ const app: Express = express();
 
 app.use(cors());
 
+console.log(`TypeScript version: ${process.env.TS_NODE_VERSION || "unknown"}`);
+
 const matchesQuery = (petValue: unknown, queryValue: string): boolean => {
   if (petValue === null || petValue === undefined) {
     return queryValue === "null";
