@@ -14,6 +14,8 @@ app.use(express.static(resolve(__dirname, "../public"), { index: false }));
 
 //special offers
 
+console.log(`TypeScript version:Soyeb Ahmed 6.0.3`);
+
 app.get("/special-offers", (req: Request, res: Response): void => {
   const specialOffers = [
     {
