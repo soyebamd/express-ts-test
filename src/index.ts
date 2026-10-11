@@ -12,6 +12,29 @@ app.use(cors());
 
 console.log(`TypeScript version:Soyeb Ahmed 6.0.3`);
 
+//special offers
+
+app.get("/special-offers", (req: Request, res: Response): void => {
+  const specialOffers = [
+    {
+      id: 1,
+      title: "Free Pet Grooming",
+      description:
+        "Get a free grooming session for your pet when you adopt from our shelter.",
+      imageUrl: "https://example.com/images/free-grooming.jpg",
+    },
+    {
+      id: 2,
+      title: "Discounted Pet Supplies",
+      description:
+        "Get exclusive discounts on all pet supplies when you adopt from our shelter.",
+      imageUrl: "https://example.com/images/discounted-supplies.jpg",
+    },
+  ];
+
+  res.status(200).json(specialOffers);
+});
+
 const matchesQuery = (petValue: unknown, queryValue: string): boolean => {
   if (petValue === null || petValue === undefined) {
     return queryValue === "null";
