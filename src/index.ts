@@ -15,7 +15,7 @@ app.use(express.static(resolve(__dirname, "../public"), { index: false }));
 //special offers
 
 console.log(`TypeScript version:Soyeb Ahmed 6.0.3`);
-console.log(`new branch features`);
+console.log(`new branch features! this is the new comment`);
 
 app.get("/coupon", (req: Request, res: Response): void => {
   app.status(200).json({ coupon_code: "2132321" });
