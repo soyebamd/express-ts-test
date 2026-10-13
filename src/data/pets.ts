@@ -270,4 +270,21 @@ export const pets: Pet[] = [
     },
     photo: "simba-ragdoll.jpg",
   },
+  {
+    id: 16,
+    name: "Rozy",
+    species: "Cat",
+    test: "just test",
+    breed: "Ragdoll",
+    age: 4,
+    adopted: true,
+    intakeDate: new Date("2024-02-20"),
+    adoptionDate: new Date("2024-04-05"),
+    medicalRecord: {
+      vaccinations: ["Rabies", "Feline Distemper"],
+      weightKg: 6.1,
+      microchipId: "RAG963",
+    },
+    photo: "simba-ragdoll.jpg",
+  },
 ];
